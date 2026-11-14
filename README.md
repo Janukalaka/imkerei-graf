@@ -1,4 +1,4 @@
-# Imkerei-Website – Grundgerüst
+# Bienenluft Graf-Hof – Website
 
 Statische Website (HTML/CSS/JS), keine Datenbank, kein Framework, keine externen Dienste.
 
@@ -10,8 +10,9 @@ imkerei-website/
 ├── impressum.html    Pflicht in Österreich (§ 5 ECG, § 25 MedienG)
 ├── datenschutz.html  DSGVO-Vorlage
 ├── css/style.css     Alle Farben/Schriften oben in :root anpassen
-├── js/main.js        Mobiles Menü, Jahreszahl, Galerie-Lightbox
-└── img/              Bilder hier ablegen (favicon.svg ist schon da)
+├── js/main.js        Menü, Scroll-Animationen, Zähler, Lightbox
+├── fonts/            Schriften lokal (Fraunces, Inter – SIL OFL)
+└── img/fotos/        Fotos (max. 2000 px, komprimiert)
 ```
 
 Alle Stellen zum Ausfüllen sind mit `[ECKIGEN KLAMMERN]` markiert

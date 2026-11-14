@@ -3,61 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- PLATZHALTER: Name & Ort anpassen – wichtig für Google -->
-  <title>Imkerei [NAME] – Honig aus [ORT]</title>
-  <meta name="description" content="Imkerei [NAME] in [ORT]: Regionaler Honig direkt vom Imker. Ab-Hof-Verkauf, Sorten, Öffnungszeiten und Anfahrt.">
+  <title>Bienenluft Graf-Hof – Bienenluft &amp; Honig im Waldviertel</title>
+  <meta name="description" content="Bienenluft Graf-Hof in Ehrenhöbarten bei Schrems: Bienenluft in unserer Hütte erleben, dazu Wald-Blütenhonig mit Gütesiegel, Perga, Propolis und Honigseife. Familie Graf, Waldviertel.">
+  <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#173d30">
 
-  <!-- Social-Media-Vorschau (WhatsApp, Facebook …) -->
-  <meta property="og:title" content="Imkerei [NAME]">
-  <meta property="og:description" content="Regionaler Honig aus [ORT]">
-  <meta property="og:image" content="img/og-bild.jpg">
+  <meta property="og:title" content="Bienenluft Graf-Hof">
+  <meta property="og:description" content="Bienenluft &amp; Honig aus dem Waldviertel – Familie Graf, Ehrenhöbarten">
+  <meta property="og:image" content="img/fotos/huette-aussen.jpg">
   <meta property="og:type" content="website">
 
-  <!-- Strukturierte Daten: hilft Google, Adresse/Öffnungszeiten zu verstehen -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Imkerei [NAME]",
-    "description": "Regionaler Honig direkt vom Imker",
+    "name": "Bienenluft Graf-Hof",
+    "description": "Bienenluft-Hütte und Imkerei der Familie Graf im Waldviertel",
     "url": "https://janukalaka.github.io/imkerei-graf/",
-    "telephone": "+43 [TELEFON]",
-    "email": "[EMAIL]",
+    "image": "https://janukalaka.github.io/imkerei-graf/img/fotos/huette-aussen.jpg",
+    "telephone": "+43 680 2108488",
+    "founder": [{ "@type": "Person", "name": "Nina Graf" }, { "@type": "Person", "name": "Herbert Graf" }],
+    "foundingDate": "2019",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "[STRASSE NR]",
-      "postalCode": "[PLZ]",
-      "addressLocality": "[ORT]",
+      "streetAddress": "Ehrenhöbarten 5",
+      "postalCode": "3943",
+      "addressLocality": "Schrems",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
-    ]
+    }
   }
   </script>
 </head>
 <body>
 
+  <!-- Bienen-Grafik, wird mehrfach verwendet -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="bee" viewBox="0 0 64 48">
+      <g class="wing wing-l"><ellipse cx="26" cy="12" rx="11" ry="8" fill="#ffffff" fill-opacity=".75" stroke="#2a2a2a" stroke-width="1.5"/></g>
+      <g class="wing wing-r"><ellipse cx="38" cy="11" rx="10" ry="7" fill="#ffffff" fill-opacity=".6" stroke="#2a2a2a" stroke-width="1.5"/></g>
+      <ellipse cx="32" cy="28" rx="18" ry="12" fill="#f2b33d" stroke="#2a2a2a" stroke-width="2"/>
+      <path d="M26 17v22M33 16v24M40 18v20" stroke="#2a2a2a" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="51" cy="26" r="7" fill="#2a2a2a"/>
+      <circle cx="53" cy="24" r="1.6" fill="#fff"/>
+      <path d="M14 28l-6 2" stroke="#2a2a2a" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Zur Startseite">
+      <a href="#top" class="logo" aria-label="Bienenluft Graf-Hof – zum Seitenanfang">
         <span class="logo-hex" aria-hidden="true"></span>
-        Imkerei [NAME]
+        <span>Bienenluft <em>Graf-Hof</em></span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="hauptnav">
-        <span class="sr-only">Menü öffnen</span>☰
+        <span class="sr-only">Menü</span>
+        <span class="burger" aria-hidden="true"></span>
       </button>
-      <nav id="hauptnav" class="main-nav">
+      <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
         <ul>
+          <li><a href="#bienenluft">Bienenluft</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
-          <li><a href="#honig">Unser Honig</a></li>
-          <li><a href="#galerie">Galerie</a></li>
-          <li><a href="#verkauf">Verkauf</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#produkte">Produkte</a></li>
+          <li><a href="#qualitaet">Qualität</a></li>
+          <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
         </ul>
       </nav>
     </div>
@@ -65,126 +80,266 @@
 
   <main id="inhalt">
 
-    <!-- HERO -->
+    <!-- ========== HERO ========== -->
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hex-field" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <svg class="bee bee-1" aria-hidden="true"><use href="#bee"/></svg>
+      <svg class="bee bee-2" aria-hidden="true"><use href="#bee"/></svg>
+      <svg class="bee bee-3" aria-hidden="true"><use href="#bee"/></svg>
+
       <div class="container hero-inner">
-        <p class="eyebrow">Imkerei seit [JAHR]</p>
-        <h1>Honig aus [ORT / REGION]</h1>
-        <p class="lead">[Ein Satz, der die Imkerei beschreibt – z. B. „Naturbelassener Honig von unseren Bienen am Waldrand.“]</p>
-        <div class="hero-actions">
-          <a href="#honig" class="btn">Unsere Sorten</a>
-          <a href="#verkauf" class="btn btn-outline">Ab-Hof-Verkauf</a>
+        <p class="eyebrow intro intro-1">Familie Graf · Ehrenhöbarten · Waldviertel</p>
+        <h1 class="intro intro-2">Durchatmen,<br>wo die Bienen <span class="hl">summen.</span></h1>
+        <p class="lead intro intro-3">In unserer Bienenluft-Hütte atmen Sie die warme, duftende Luft aus dem Inneren unserer Bienenstöcke – ein ruhiger Moment mitten in der Natur.</p>
+        <div class="hero-actions intro intro-4">
+          <a href="#kontakt" class="btn btn-honey">Bienenluft anfragen</a>
+          <a href="#bienenluft" class="btn btn-ghost">Mehr erfahren</a>
         </div>
       </div>
+      <a href="#bienenluft" class="scroll-hint" aria-label="Weiter nach unten"><span></span></a>
     </section>
 
-    <!-- ÜBER UNS -->
-    <section id="ueber-uns" class="section">
-      <div class="container two-col">
-        <div>
-          <h2>Über uns</h2>
-          <p>[Wer steht hinter der Imkerei? Seit wann? Wie viele Bienenvölker? Wo stehen die Bienen?]</p>
-          <p>[Was ist euch wichtig – z. B. naturnahe Bienenhaltung, kurze Wege, Qualität.]</p>
-        </div>
-        <div class="img-placeholder" role="img" aria-label="Platzhalter für ein Foto des Imkers">
-          Foto: Imker / Bienenstand
-        </div>
-      </div>
-    </section>
-
-    <!-- HONIG / PRODUKTE -->
-    <section id="honig" class="section section-alt">
+    <!-- ========== BIENENLUFT ========== -->
+    <section id="bienenluft" class="section">
       <div class="container">
-        <h2>Unser Honig</h2>
-        <p class="section-intro">[Kurzer Einleitungssatz zu den Sorten.]</p>
-        <div class="cards">
-          <article class="card">
-            <div class="img-placeholder small">Foto</div>
-            <h3>Blütenhonig</h3>
-            <p>[Beschreibung: Geschmack, Konsistenz, Erntezeit]</p>
-            <p class="price">[Preis] € / 500 g</p>
+        <div class="split">
+          <div class="split-text">
+            <p class="kicker reveal">Unser Herzstück</p>
+            <h2 class="reveal">Was ist Bienenluft?</h2>
+            <p class="reveal">Im Inneren eines Bienenstocks herrscht ein ganz eigenes Klima: warm, feucht und erfüllt vom Duft nach Bienenwachs, Honig, Propolis und Blütenpollen. Genau diese Luft können Sie bei uns einatmen.</p>
+            <p class="reveal">Dafür haben wir eine eigene <strong>Bienenluft-Hütte</strong> aus Holz gebaut. Darin stehen unsere Bienenstöcke – Sie sitzen gemütlich daneben, lauschen dem gleichmäßigen Summen und atmen ganz entspannt durch.</p>
+            <p class="reveal">Die Luft wird über ein geschlossenes System aus dem Stock zu Ihrer Atemmaske geführt. <strong>Mit den Bienen selbst kommen Sie dabei nicht in Berührung</strong> – sie bleiben ungestört, und Sie auch.</p>
+            <p class="note reveal">Nina Graf hat die Schulungen zum beecura®-System absolviert. Bienenluft ist ein Naturerlebnis zum Entspannen und Genießen.</p>
+          </div>
+          <div class="split-media reveal">
+            <figure class="photo-stack">
+              <a href="img/fotos/huette-innen.jpg" class="lb photo-main"><img src="img/fotos/huette-innen.jpg" alt="Bienenstöcke aufgereiht unter den Fenstern im Inneren der Bienenluft-Hütte" loading="lazy" width="1052" height="1400"></a>
+              <a href="img/fotos/huette-tuer.jpg" class="lb photo-small"><img src="img/fotos/huette-tuer.jpg" alt="Offene grüne Tür der Bienenluft-Hütte aus Holz" loading="lazy" width="788" height="1400"></a>
+            </figure>
+          </div>
+        </div>
+
+        <h3 class="steps-title reveal">So läuft ein Besuch ab</h3>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-hex">1</span>
+            <h4>Termin vereinbaren</h4>
+            <p>Rufen Sie uns einfach an – wir finden gemeinsam einen passenden Termin.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-hex">2</span>
+            <h4>Ankommen</h4>
+            <p>Wir begrüßen Sie bei uns am Hof, zeigen Ihnen die Hütte und erklären alles in Ruhe.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-hex">3</span>
+            <h4>Durchatmen &amp; genießen</h4>
+            <p>Lehnen Sie sich zurück, atmen Sie die Bienenluft und lassen Sie das Summen auf sich wirken.</p>
+          </li>
+        </ol>
+        <p class="center muted reveal">Bienenluft gibt es in der warmen Jahreszeit, wenn unsere Völker aktiv sind. Dauer und Preise auf Anfrage.</p>
+      </div>
+    </section>
+
+    <!-- ========== ÜBER UNS ========== -->
+    <section id="ueber-uns" class="section section-wood">
+      <div class="container">
+        <div class="split split-reverse">
+          <div class="split-text">
+            <p class="kicker reveal">Über uns</p>
+            <h2 class="reveal">Familie Graf &amp; neun Bienenvölker</h2>
+            <p class="reveal">Wir, <strong>Nina und Herbert Graf</strong>, wohnen im oberen Waldviertel in Ehrenhöbarten. Unsere Liebe zur Natur hat uns 2019 zu ganz besonderen Tieren geführt – den Honigbienen. Heute betreuen wir neun Bienenvölker, und sie begeistern uns jeden Tag aufs Neue.</p>
+            <p class="reveal">Für uns steht das Wohl der Bienen an erster Stelle. Sie dürfen ihre natürlichen Instinkte voll ausleben. Wir entnehmen nur <strong>einmal im Jahr</strong> Honig und lassen immer so viel davon im Stock, wie die Völker für den Winter brauchen. Unsere Bienen überwintern auf ihrem eigenen Honig – <strong>nicht auf Zuckerwasser</strong>.</p>
+            <p class="reveal">Das merkt man: Vitale Völker kümmern sich intensiv um die Sauberkeit in ihrem Stock und sind widerstandsfähiger gegenüber Krankheiten und Schädlingen.</p>
+          </div>
+          <div class="split-media">
+            <blockquote class="motto reveal">
+              <p lang="la">„Uti, non abuti!“</p>
+              <footer>Gebrauchen, nicht missbrauchen – unser Leitsatz im Umgang mit den Bienen.</footer>
+            </blockquote>
+            <a href="img/fotos/huette-seite.jpg" class="lb rounded-photo reveal"><img src="img/fotos/huette-seite.jpg" alt="Seitenansicht der Bienenluft-Hütte mit grünem Fenster im Garten" loading="lazy" width="1400" height="788"></a>
+          </div>
+        </div>
+
+        <ul class="stats">
+          <li class="stat reveal"><span class="stat-num" data-count="2019" data-plain>2019</span><span class="stat-label">imkern wir seit</span></li>
+          <li class="stat reveal"><span class="stat-num" data-count="9">9</span><span class="stat-label">Bienenvölker</span></li>
+          <li class="stat reveal"><span class="stat-num" data-count="1" data-suffix="×">1×</span><span class="stat-label">Ernte im Jahr</span></li>
+          <li class="stat reveal"><span class="stat-num" data-count="0" data-suffix=" %">0 %</span><span class="stat-label">Zuckerwasser im Winter</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== FAKTEN ========== -->
+    <section class="facts" aria-labelledby="fakten-titel">
+      <div class="facts-hex" aria-hidden="true"></div>
+      <div class="container">
+        <h2 id="fakten-titel" class="reveal">Wusstet ihr …?</h2>
+        <p class="facts-intro reveal">Für nur <strong>1 kg Honig</strong> leisten die Bienen Unglaubliches:</p>
+        <ul class="facts-grid">
+          <li class="fact reveal"><span class="fact-num" data-count="3" data-suffix=" kg">3 kg</span><span>Nektar sammeln</span></li>
+          <li class="fact reveal"><span class="fact-num" data-count="5.6" data-decimals="1" data-suffix=" Mio.">5,6 Mio.</span><span>Blütenbesuche</span></li>
+          <li class="fact reveal"><span class="fact-num" data-count="79000" data-suffix=" km">79.000 km</span><span>Flugstrecke</span></li>
+          <li class="fact reveal"><span class="fact-num" data-count="350000">350.000</span><span>Ausflüge</span></li>
+        </ul>
+        <p class="facts-outro reveal">Na, was sagt ihr? Genießt den süßen Moment – er ist kostbar!</p>
+      </div>
+    </section>
+
+    <!-- ========== PRODUKTE ========== -->
+    <section id="produkte" class="section">
+      <div class="container">
+        <p class="kicker center reveal">Aus unseren Bienenstöcken</p>
+        <h2 class="center reveal">Unsere Produkte</h2>
+        <p class="section-intro center reveal">Alles in kleinen Mengen, direkt von unseren eigenen Bienen. Erhältlich bei uns am Hof oder per Post.</p>
+
+        <div class="products">
+          <article class="product product-featured reveal">
+            <div class="product-img">
+              <img src="img/fotos/honig-guetesiegel.jpg" alt="Gläser mit Wald-Blütenhonig, Propolis und Seife vor dem Gütesiegel-Zertifikat" loading="lazy" width="1050" height="1400">
+              <span class="badge">Gütesiegel</span>
+            </div>
+            <div class="product-body">
+              <h3>Wald-Blütenhonig</h3>
+              <p>Naturbelassen, einmal im Jahr geerntet – ein kräftig-blumiger Honig aus Blüten- und Waldtracht des Waldviertels.</p>
+              <ul class="price-list">
+                <li><span>250 g</span><span>5 €</span></li>
+                <li><span>500 g</span><span>10 €</span></li>
+                <li><span>1 kg</span><span>18 €</span></li>
+              </ul>
+            </div>
           </article>
-          <article class="card">
-            <div class="img-placeholder small">Foto</div>
-            <h3>Waldhonig</h3>
-            <p>[Beschreibung]</p>
-            <p class="price">[Preis] € / 500 g</p>
+
+          <article class="product reveal">
+            <div class="product-img product-img-art" aria-hidden="true">
+              <div class="comb"></div>
+            </div>
+            <div class="product-body">
+              <h3>Bienenbrot / Perga</h3>
+              <p>Von den Bienen eingelagerter, fermentierter Blütenpollen aus den Waben.</p>
+              <p class="small">Nahrungsergänzungsmittel</p>
+              <ul class="price-list"><li><span>100 g</span><span>10 €</span></li></ul>
+            </div>
           </article>
-          <article class="card">
-            <div class="img-placeholder small">Foto</div>
-            <h3>[Weitere Sorte / Produkt]</h3>
-            <p>[z. B. Cremehonig, Propolis, Bienenwachskerzen]</p>
-            <p class="price">[Preis]</p>
+
+          <article class="product reveal">
+            <div class="product-img">
+              <img src="img/fotos/seife.jpg" alt="Ziegenmilchseife mit Honig in Kartonverpackung" loading="lazy" width="1050" height="1400">
+            </div>
+            <div class="product-body">
+              <h3>Ziegenmilchseife mit Honig</h3>
+              <p>Handgesiedet mit Ziegenmilch, Honig und Bienenwachs, ca. 90 g.</p>
+              <ul class="price-list"><li><span>Stück</span><span>6 €</span></li></ul>
+            </div>
+          </article>
+
+          <article class="product reveal">
+            <div class="product-img">
+              <img src="img/fotos/propolis.jpg" alt="Zwei Fläschchen Propolis-Tropfen vor Blumen" loading="lazy" width="1050" height="1400">
+            </div>
+            <div class="product-body">
+              <h3>Propolis-Tropfen</h3>
+              <p>Propolis aus unseren Bienenstöcken, in Alkohol gelöst.</p>
+              <p class="small">Nahrungsergänzungsmittel · enthält Alkohol</p>
+              <ul class="price-list"><li><span>30 ml</span><span>12 €</span></li></ul>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- GALERIE -->
-    <section id="galerie" class="section">
+    <!-- ========== QUALITÄT ========== -->
+    <section id="qualitaet" class="section section-green">
       <div class="container">
-        <h2>Galerie</h2>
-        <p class="section-intro">Einblicke in unser Imkerjahr.</p>
-        <!-- Bilder später einfach ersetzen: <a href="img/galerie/bild1.jpg"><img src="img/galerie/bild1.jpg" alt="Beschreibung" loading="lazy"></a> -->
+        <div class="split">
+          <div class="split-text">
+            <p class="kicker reveal">Geprüfte Qualität</p>
+            <h2 class="reveal">Ausgezeichnet mit dem österreichischen Honig-Gütesiegel</h2>
+            <p class="reveal">Unser Honig wird jedes Jahr im Labor untersucht. Für das Gütesiegel gelten <strong>strengere Grenzwerte als gesetzlich vorgeschrieben</strong> – und unser Honig erfüllt sie deutlich.</p>
+            <p class="reveal">Untersucht wurde die Ernte 2026 von der Steirischen Imkerschule in Graz.</p>
+          </div>
+          <div class="split-media">
+            <div class="lab-card reveal">
+              <h3>Wassergehalt</h3>
+              <p class="lab-sub">Je weniger Wasser, desto reifer und haltbarer der Honig.</p>
+              <div class="bars">
+                <div class="bar-row">
+                  <span class="bar-label">Unser Honig</span>
+                  <div class="bar"><div class="bar-fill bar-ours" data-width="77"></div></div>
+                  <span class="bar-val">15,4 %</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">Gütesiegel max.</span>
+                  <div class="bar"><div class="bar-fill" data-width="87.5"></div></div>
+                  <span class="bar-val">17,5 %</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">Gesetzlich max.</span>
+                  <div class="bar"><div class="bar-fill" data-width="100"></div></div>
+                  <span class="bar-val">20 %</span>
+                </div>
+              </div>
+              <dl class="lab-facts">
+                <div><dt>Invertase-Aktivität</dt><dd>136 U/kg – Zeichen für schonende Verarbeitung</dd></div>
+                <div><dt>Farbe &amp; Konsistenz</dt><dd>hell bernstein, dickflüssig</dd></div>
+                <div><dt>Geschmack</dt><dd>blütig, lieblich</dd></div>
+                <div><dt>Sauberkeit</dt><dd>ohne Beanstandung</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EINBLICKE ========== -->
+    <section class="section section-tight" aria-labelledby="einblicke-titel">
+      <div class="container">
+        <h2 id="einblicke-titel" class="center reveal">Einblicke</h2>
         <div class="gallery">
-          <div class="img-placeholder">Bild 1</div>
-          <div class="img-placeholder">Bild 2</div>
-          <div class="img-placeholder">Bild 3</div>
-          <div class="img-placeholder">Bild 4</div>
-          <div class="img-placeholder">Bild 5</div>
-          <div class="img-placeholder">Bild 6</div>
+          <a href="img/fotos/huette-aussen.jpg" class="lb reveal"><img src="img/fotos/huette-aussen.jpg" alt="Bienenluft-Hütte aus Holz im Garten bei Sonnenschein" loading="lazy" width="2000" height="1125"></a>
+          <a href="img/fotos/huette-innen.jpg" class="lb reveal"><img src="img/fotos/huette-innen.jpg" alt="Bienenstöcke im Inneren der Hütte" loading="lazy" width="1052" height="1400"></a>
+          <a href="img/fotos/huette-tuer.jpg" class="lb reveal"><img src="img/fotos/huette-tuer.jpg" alt="Eingang der Bienenluft-Hütte" loading="lazy" width="788" height="1400"></a>
+          <a href="img/fotos/seife-2.jpg" class="lb reveal"><img src="img/fotos/seife-2.jpg" alt="Honigseife mit eingeprägter Biene" loading="lazy" width="1050" height="1400"></a>
+          <a href="img/fotos/honig-guetesiegel.jpg" class="lb reveal"><img src="img/fotos/honig-guetesiegel.jpg" alt="Honiggläser und Qualitäts-Zertifikat" loading="lazy" width="1050" height="1400"></a>
         </div>
       </div>
     </section>
 
-    <!-- VERKAUF / ÖFFNUNGSZEITEN -->
-    <section id="verkauf" class="section section-alt">
-      <div class="container two-col">
-        <div>
-          <h2>Ab-Hof-Verkauf</h2>
-          <p>[Wie kommt man zum Honig? Ab Hof, Bauernmarkt, Selbstbedienung, nach Vereinbarung …]</p>
-          <table class="hours">
-            <caption class="sr-only">Öffnungszeiten</caption>
-            <tbody>
-              <tr><th scope="row">Montag – Freitag</th><td>nach telefonischer Vereinbarung</td></tr>
-              <tr><th scope="row">Samstag</th><td>09:00 – 12:00</td></tr>
-              <tr><th scope="row">Sonntag</th><td>geschlossen</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <h3>Auch erhältlich bei</h3>
-          <ul class="plain-list">
-            <li>[z. B. Bauernmarkt [ORT], jeden Freitag]</li>
-            <li>[z. B. Nah&amp;Frisch [ORT]]</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- ========== KONTAKT ========== -->
+    <section id="kontakt" class="section section-wood">
+      <div class="container">
+        <p class="kicker center reveal">Kontakt &amp; Bestellung</p>
+        <h2 class="center reveal">Wir freuen uns auf Sie!</h2>
+        <p class="section-intro center reveal">Ob Bienenluft-Termin oder Honigbestellung – melden Sie sich einfach, Anfragen sind <strong>jederzeit</strong> möglich.</p>
 
-    <!-- KONTAKT / ANFAHRT -->
-    <section id="kontakt" class="section">
-      <div class="container two-col">
-        <div>
-          <h2>Kontakt &amp; Anfahrt</h2>
-          <address>
-            <strong>Imkerei [NAME]</strong><br>
-            [Vorname Nachname]<br>
-            [Straße Nr]<br>
-            [PLZ] [ORT]
-          </address>
-          <p>
-            Telefon: <a href="tel:+43000000000">+43 [TELEFON]</a><br>
-            E-Mail: <a href="mailto:[EMAIL]">[EMAIL]</a>
-          </p>
-        </div>
-        <div class="map-box">
-          <!-- Absichtlich KEINE eingebettete Google-Karte: die würde ohne Einwilligung Daten an Google senden (DSGVO).
-               Ein einfacher Link ist rechtlich unproblematisch. -->
-          <p>So findest du zu uns:</p>
-          <a class="btn" href="https://maps.google.com/?q=[STRASSE+NR],+[PLZ]+[ORT]" target="_blank" rel="noopener">
-            In Google Maps öffnen
-          </a>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Anrufen</h3>
+            <a class="phone" href="tel:+436802108488"><span>Nina Graf</span>0680 210 84 88</a>
+            <a class="phone" href="tel:+436641807024"><span>Herbert Graf</span>0664 180 70 24</a>
+            <!-- E-Mail folgt: <a class="phone" href="mailto:[EMAIL]"><span>E-Mail</span>[EMAIL]</a> -->
+          </div>
+          <div class="contact-card reveal">
+            <h3>So kommen Sie zu Ihrem Honig</h3>
+            <ul class="check-list">
+              <li><strong>Abholung</strong> direkt bei uns in Ehrenhöbarten</li>
+              <li><strong>Versand</strong> bequem per Post</li>
+              <li>Bestellung per Telefon<!-- oder E-Mail --></li>
+            </ul>
+          </div>
+          <div class="contact-card reveal">
+            <h3>Hier finden Sie uns</h3>
+            <address>
+              Bienenluft Graf-Hof<br>
+              Nina &amp; Herbert Graf<br>
+              Ehrenhöbarten 5<br>
+              3943 Schrems
+            </address>
+            <a class="btn btn-green" href="https://www.google.com/maps/search/?api=1&amp;query=Ehrenh%C3%B6barten+5%2C+3943+Schrems" target="_blank" rel="noopener">In Google Maps öffnen</a>
+          </div>
         </div>
       </div>
     </section>
@@ -193,11 +348,18 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="jahr"></span> Imkerei [NAME]</p>
+      <div class="footer-brand">
+        <span class="logo-hex" aria-hidden="true"></span>
+        <div>
+          <strong>Bienenluft Graf-Hof</strong>
+          <p>Ehrenhöbarten 5 · 3943 Schrems</p>
+        </div>
+      </div>
       <nav aria-label="Rechtliches">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </nav>
+      <p class="footer-copy">&copy; <span id="jahr">2026</span> Familie Graf</p>
     </div>
   </footer>
 
