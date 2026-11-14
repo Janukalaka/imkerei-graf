@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PLATZHALTER: Name & Ort anpassen – wichtig für Google -->
+  <title>Imkerei [NAME] – Honig aus [ORT]</title>
+  <meta name="description" content="Imkerei [NAME] in [ORT]: Regionaler Honig direkt vom Imker. Ab-Hof-Verkauf, Sorten, Öffnungszeiten und Anfahrt.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <!-- Social-Media-Vorschau (WhatsApp, Facebook …) -->
+  <meta property="og:title" content="Imkerei [NAME]">
+  <meta property="og:description" content="Regionaler Honig aus [ORT]">
+  <meta property="og:image" content="img/og-bild.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Strukturierte Daten: hilft Google, Adresse/Öffnungszeiten zu verstehen -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Imkerei [NAME]",
+    "description": "Regionaler Honig direkt vom Imker",
+    "url": "https://janukalaka.github.io/imkerei-graf/",
+    "telephone": "+43 [TELEFON]",
+    "email": "[EMAIL]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[STRASSE NR]",
+      "postalCode": "[PLZ]",
+      "addressLocality": "[ORT]",
+      "addressCountry": "AT"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Zur Startseite">
+        <span class="logo-hex" aria-hidden="true"></span>
+        Imkerei [NAME]
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="hauptnav">
+        <span class="sr-only">Menü öffnen</span>☰
+      </button>
+      <nav id="hauptnav" class="main-nav">
+        <ul>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#honig">Unser Honig</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#verkauf">Verkauf</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Imkerei seit [JAHR]</p>
+        <h1>Honig aus [ORT / REGION]</h1>
+        <p class="lead">[Ein Satz, der die Imkerei beschreibt – z. B. „Naturbelassener Honig von unseren Bienen am Waldrand.“]</p>
+        <div class="hero-actions">
+          <a href="#honig" class="btn">Unsere Sorten</a>
+          <a href="#verkauf" class="btn btn-outline">Ab-Hof-Verkauf</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÜBER UNS -->
+    <section id="ueber-uns" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Über uns</h2>
+          <p>[Wer steht hinter der Imkerei? Seit wann? Wie viele Bienenvölker? Wo stehen die Bienen?]</p>
+          <p>[Was ist euch wichtig – z. B. naturnahe Bienenhaltung, kurze Wege, Qualität.]</p>
+        </div>
+        <div class="img-placeholder" role="img" aria-label="Platzhalter für ein Foto des Imkers">
+          Foto: Imker / Bienenstand
+        </div>
+      </div>
+    </section>
+
+    <!-- HONIG / PRODUKTE -->
+    <section id="honig" class="section section-alt">
+      <div class="container">
+        <h2>Unser Honig</h2>
+        <p class="section-intro">[Kurzer Einleitungssatz zu den Sorten.]</p>
+        <div class="cards">
+          <article class="card">
+            <div class="img-placeholder small">Foto</div>
+            <h3>Blütenhonig</h3>
+            <p>[Beschreibung: Geschmack, Konsistenz, Erntezeit]</p>
+            <p class="price">[Preis] € / 500 g</p>
+          </article>
+          <article class="card">
+            <div class="img-placeholder small">Foto</div>
+            <h3>Waldhonig</h3>
+            <p>[Beschreibung]</p>
+            <p class="price">[Preis] € / 500 g</p>
+          </article>
+          <article class="card">
+            <div class="img-placeholder small">Foto</div>
+            <h3>[Weitere Sorte / Produkt]</h3>
+            <p>[z. B. Cremehonig, Propolis, Bienenwachskerzen]</p>
+            <p class="price">[Preis]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie" class="section">
+      <div class="container">
+        <h2>Galerie</h2>
+        <p class="section-intro">Einblicke in unser Imkerjahr.</p>
+        <!-- Bilder später einfach ersetzen: <a href="img/galerie/bild1.jpg"><img src="img/galerie/bild1.jpg" alt="Beschreibung" loading="lazy"></a> -->
+        <div class="gallery">
+          <div class="img-placeholder">Bild 1</div>
+          <div class="img-placeholder">Bild 2</div>
+          <div class="img-placeholder">Bild 3</div>
+          <div class="img-placeholder">Bild 4</div>
+          <div class="img-placeholder">Bild 5</div>
+          <div class="img-placeholder">Bild 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERKAUF / ÖFFNUNGSZEITEN -->
+    <section id="verkauf" class="section section-alt">
+      <div class="container two-col">
+        <div>
+          <h2>Ab-Hof-Verkauf</h2>
+          <p>[Wie kommt man zum Honig? Ab Hof, Bauernmarkt, Selbstbedienung, nach Vereinbarung …]</p>
+          <table class="hours">
+            <caption class="sr-only">Öffnungszeiten</caption>
+            <tbody>
+              <tr><th scope="row">Montag – Freitag</th><td>nach telefonischer Vereinbarung</td></tr>
+              <tr><th scope="row">Samstag</th><td>09:00 – 12:00</td></tr>
+              <tr><th scope="row">Sonntag</th><td>geschlossen</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Auch erhältlich bei</h3>
+          <ul class="plain-list">
+            <li>[z. B. Bauernmarkt [ORT], jeden Freitag]</li>
+            <li>[z. B. Nah&amp;Frisch [ORT]]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT / ANFAHRT -->
+    <section id="kontakt" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Kontakt &amp; Anfahrt</h2>
+          <address>
+            <strong>Imkerei [NAME]</strong><br>
+            [Vorname Nachname]<br>
+            [Straße Nr]<br>
+            [PLZ] [ORT]
+          </address>
+          <p>
+            Telefon: <a href="tel:+43000000000">+43 [TELEFON]</a><br>
+            E-Mail: <a href="mailto:[EMAIL]">[EMAIL]</a>
+          </p>
+        </div>
+        <div class="map-box">
+          <!-- Absichtlich KEINE eingebettete Google-Karte: die würde ohne Einwilligung Daten an Google senden (DSGVO).
+               Ein einfacher Link ist rechtlich unproblematisch. -->
+          <p>So findest du zu uns:</p>
+          <a class="btn" href="https://maps.google.com/?q=[STRASSE+NR],+[PLZ]+[ORT]" target="_blank" rel="noopener">
+            In Google Maps öffnen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="jahr"></span> Imkerei [NAME]</p>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
