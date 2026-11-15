@@ -179,47 +179,30 @@ p { margin: 0 0 1.1em; }
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative; overflow: hidden;
-  min-height: min(100svh, 960px); display: flex; align-items: center;
-  color: var(--weiss); padding: 7.5rem 0 5rem;
+  position: relative; overflow: hidden; isolation: isolate;
+  min-height: min(100svh, 940px); display: flex; align-items: center;
+  color: var(--weiss); padding: 8rem 0 6rem;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: -2;
   background:
-    radial-gradient(ellipse 60% 70% at 80% 40%, rgba(242, 179, 61, .22), transparent 70%),
-    radial-gradient(ellipse 50% 60% at 10% 90%, rgba(31, 77, 60, .9), transparent 70%),
-    linear-gradient(160deg, var(--wald) 0%, var(--wald-tief) 70%);
+    linear-gradient(95deg, rgba(12, 34, 27, .88) 0%, rgba(12, 34, 27, .62) 40%, rgba(12, 34, 27, .1) 75%, rgba(12, 34, 27, 0) 100%),
+    linear-gradient(0deg, rgba(12, 34, 27, .55) 0%, rgba(12, 34, 27, 0) 30%),
+    url("../img/fotos/haus-abendlicht.jpg") 70% 45% / cover;
+  animation: heroZoom 22s ease-in-out infinite alternate;
+  transform-origin: 70% 50%;
 }
-.hero-grid {
-  display: grid; align-items: center; gap: clamp(2.5rem, 6vw, 5rem);
-  grid-template-columns: 1.1fr .9fr;
+@keyframes heroZoom { from { transform: scale(1.02); } to { transform: scale(1.1); } }
+.hero-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+.hero-chip {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .5rem 1rem; border-radius: 999px; font-size: .88rem; font-weight: 600;
+  background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .25); backdrop-filter: blur(6px);
 }
-.hero-visual { position: relative; justify-self: center; width: min(100%, 440px); }
-.hero-photo {
-  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
-  border-radius: 200px 200px var(--radius) var(--radius);
-  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .6);
-  outline: 1px solid rgba(255, 255, 255, .15); outline-offset: 10px;
-}
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; animation: heroZoom 20s ease-in-out infinite alternate; }
-@keyframes heroZoom { from { transform: scale(1.02); } to { transform: scale(1.12); } }
-.hero-badge {
-  position: absolute; display: flex; align-items: center; gap: .7rem;
-  padding: .8rem 1.1rem; border-radius: 16px;
-  background: rgba(251, 247, 239, .95); color: var(--wald-tief);
-  font-size: .85rem; font-weight: 600; line-height: 1.25;
-  box-shadow: var(--shadow-lg);
-  animation: badgeFloat 6s ease-in-out infinite;
-}
-.hero-badge-1 { left: -12%; bottom: 14%; }
-.hero-badge-2 { right: -10%; top: 12%; animation-delay: -3s; }
-.hero-badge-num { font-family: var(--font-titel); font-size: 2rem; font-weight: 700; color: var(--honig-dunkel); line-height: 1; }
-.hero-badge-icon { width: 26px; height: 30px; background: var(--honig); clip-path: var(--hex); flex: none; }
-@keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.hero-chip-hex { width: 14px; height: 16px; background: var(--honig); clip-path: var(--hex); }
 
 @media (max-width: 900px) {
-  .hero { padding: 6.5rem 0 4.5rem; }
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { width: min(80%, 360px); margin-top: 1rem; }
-  .hero-badge-1 { left: -8%; }
-  .hero-badge-2 { right: -8%; }
+  .hero { padding: 7rem 0 4.5rem; }
   .scroll-hint { display: none; }
 }
 
@@ -276,9 +259,9 @@ p { margin: 0 0 1.1em; }
 .bee { position: absolute; width: 46px; height: 35px; z-index: 1; pointer-events: none; }
 .bee .wing { transform-box: fill-box; transform-origin: 50% 100%; animation: flap .12s ease-in-out infinite alternate; }
 @keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(.35); } }
-.bee-1 { top: 8%; left: -6%; animation: fly1 16s ease-in-out infinite; }
-.bee-2 { top: 55%; right: -4%; width: 34px; height: 26px; animation: fly2 21s ease-in-out infinite; }
-.bee-3 { bottom: 4%; left: 30%; width: 26px; height: 20px; animation: fly3 13s ease-in-out infinite; opacity: .9; }
+.bee-1 { top: 28%; right: 20%; animation: fly1 16s ease-in-out infinite; }
+.bee-2 { top: 62%; right: 32%; width: 34px; height: 26px; animation: fly2 21s ease-in-out infinite; }
+.bee-3 { top: 18%; right: 42%; width: 26px; height: 20px; animation: fly3 13s ease-in-out infinite; opacity: .9; }
 @keyframes fly1 {
   0%   { transform: translate(0, 0) rotate(-6deg); }
   25%  { transform: translate(-140px, 60px) rotate(8deg); }
@@ -610,12 +593,83 @@ address { font-style: normal; margin-bottom: 1.5rem; line-height: 1.8; }
   .js .reveal { opacity: 1; transform: none; }
 }
 
+/* ---------- Preise ---------- */
+.trial {
+  display: flex; align-items: center; gap: 1.25rem; max-width: 640px; margin: 0 auto 2.5rem;
+  padding: 1.25rem 1.6rem; border-radius: var(--radius);
+  background: var(--honig); color: var(--wald-tief); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .5);
+}
+.trial h3 { color: var(--wald-tief); margin: 0 0 .15rem; font-size: 1.35rem; }
+.trial p { margin: 0; }
+.trial-tag {
+  flex: none; display: grid; place-items: center; width: 74px; height: 85px; clip-path: var(--hex);
+  background: var(--wald-tief); color: var(--honig-hell); font-family: var(--font-titel); font-weight: 700; font-size: 1.05rem;
+  animation: pulse 2.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+
+.prices { display: grid; gap: 1.1rem; grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 1100px) { .prices { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .prices { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .prices { grid-template-columns: 1fr; } }
+.price-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--weiss); color: var(--text); border-radius: var(--radius); padding: 1.5rem 1.3rem 1.3rem;
+  transition: transform .4s var(--ease), box-shadow .4s;
+}
+.price-card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -20px rgba(0, 0, 0, .55); }
+.price-card h3 { color: var(--wald-tief); font-size: 1.3rem; margin-bottom: .3rem; }
+.price-meta { font-size: .88rem; color: var(--text-hell); margin-bottom: 1rem; }
+.price-big { font-family: var(--font-titel); font-weight: 700; font-size: 1.9rem; color: var(--honig-dunkel); margin: auto 0 0; line-height: 1.1; }
+.price-per { font-size: .85rem; color: var(--text-hell); margin: .3rem 0 0; }
+.price-card-hl { outline: 3px solid var(--honig); }
+.price-card-kids { background: var(--holz); }
+.price-flag {
+  position: absolute; top: -.75rem; right: 1rem; padding: .25rem .75rem; border-radius: 999px;
+  background: var(--honig); color: var(--wald-tief); font-size: .75rem; font-weight: 700; letter-spacing: .05em;
+}
+.userbox {
+  display: flex; gap: 1.2rem; align-items: center; max-width: 760px; margin: 2.5rem auto 0;
+  padding: 1.4rem 1.6rem; border-radius: var(--radius);
+  border: 1px dashed rgba(251, 215, 127, .6); background: rgba(255, 255, 255, .05);
+}
+.userbox h3 { color: var(--weiss); font-size: 1.25rem; margin-bottom: .25rem; }
+.userbox p { margin: 0; }
+.userbox strong { color: var(--honig-hell); }
+.userbox-icon { flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(242, 179, 61, .18); color: var(--honig-hell); }
+.userbox-icon svg { width: 30px; height: 30px; }
+.section-green .section-intro { color: #cfdcd4; }
+.section-green .section-intro strong { color: var(--weiss); }
+
+/* ---------- Ausverkauft ---------- */
+.product-soldout .product-img img { filter: grayscale(.55) brightness(.9); }
+.soldout-ribbon {
+  position: absolute; z-index: 2; top: 1rem; left: 1rem;
+  padding: .4rem .9rem; border-radius: 999px;
+  background: #b3261e; color: #fff; font-size: .8rem; font-weight: 700; letter-spacing: .03em;
+  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, .5);
+}
+.soldout-note {
+  font-size: .9rem; color: #8a1c15 !important; background: #fbeae8;
+  border-radius: var(--radius-sm); padding: .6rem .8rem; margin-bottom: .8rem;
+}
+.product-soldout .price-list { opacity: .5; text-decoration: line-through; }
+
 /* ---------- Feinschliff Handy ---------- */
 @media (max-width: 640px) {
   .eyebrow { font-size: .7rem; letter-spacing: .1em; border-radius: 14px; }
   .bee-1 { width: 34px; height: 26px; }
   .bee-2 { width: 26px; height: 20px; }
   .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
-  .hero-badge { font-size: .78rem; padding: .6rem .8rem; }
-  .hero-badge-num { font-size: 1.6rem; }
+  .hero-bg {
+    background:
+      linear-gradient(180deg, rgba(12, 34, 27, .35) 0%, rgba(12, 34, 27, .6) 45%, rgba(12, 34, 27, .88) 100%),
+      url("../img/fotos/haus-abendlicht.jpg") 62% 40% / cover;
+  }
+  .bee-1 { top: 12%; right: 6%; }
+  .bee-2 { top: 90%; right: 12%; }
+  .bee-3 { display: none; }
+  .hero-chip { font-size: .8rem; }
+  .trial { flex-direction: column; text-align: center; }
+  .userbox { flex-direction: column; text-align: center; }
 }
