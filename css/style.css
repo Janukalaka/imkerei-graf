@@ -673,3 +673,5 @@ address { font-style: normal; margin-bottom: 1.5rem; line-height: 1.8; }
   .trial { flex-direction: column; text-align: center; }
   .userbox { flex-direction: column; text-align: center; }
 }
+
+.phone-mail { font-size: clamp(1.05rem, 2.4vw, 1.3rem); overflow-wrap: anywhere; }
