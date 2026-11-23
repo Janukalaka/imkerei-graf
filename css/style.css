@@ -669,3 +669,10 @@ address { font-style: normal; margin-bottom: 1.5rem; line-height: 1.8; }
 }
 
 .phone-mail { font-size: clamp(1.05rem, 2.4vw, 1.3rem); overflow-wrap: anywhere; }
+
+.beecura-link {
+  display: inline-flex; align-items: center; gap: .4rem; margin: .2rem 0 1rem;
+  color: var(--honig-hell); font-weight: 600; text-decoration: none;
+  border-bottom: 1px solid rgba(251, 215, 127, .5); transition: gap .3s var(--ease), color .3s;
+}
+.beecura-link:hover { color: var(--weiss); gap: .7rem; }
