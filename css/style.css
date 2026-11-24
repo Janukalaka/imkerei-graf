@@ -676,3 +676,11 @@ address { font-style: normal; margin-bottom: 1.5rem; line-height: 1.8; }
   border-bottom: 1px solid rgba(251, 215, 127, .5); transition: gap .3s var(--ease), color .3s;
 }
 .beecura-link:hover { color: var(--weiss); gap: .7rem; }
+
+.photo-small { position: absolute; }
+.photo-tag {
+  position: absolute; left: .6rem; bottom: .6rem; right: .6rem; text-align: center;
+  padding: .3rem .6rem; border-radius: 999px; font-size: .78rem; font-weight: 600;
+  background: rgba(251, 247, 239, .93); color: var(--wald-tief);
+}
+.info-access { border-top-color: var(--honig-dunkel); }
